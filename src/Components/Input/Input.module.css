@@ -1,0 +1,13 @@
+.input{
+    border-color: red;
+}
+
+.label{
+    color: red;
+}
+
+.div{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
