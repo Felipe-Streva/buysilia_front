@@ -1,9 +1,9 @@
 import React from 'react';
 import Input from '../../Components/Input/Input.js'
-import styles from './CadastroCliente.module.css'
+import styles from './ClientRegister.module.css'
 import SideHeader from '../../Components/SideHeader/SideHeader'
 
-function CadastroCliente() {
+function ClientRegister() {
 
   return (
     <div className={styles.body} >
@@ -27,4 +27,4 @@ function CadastroCliente() {
   );
 }
 
-export default CadastroCliente;
+export default ClientRegister;
