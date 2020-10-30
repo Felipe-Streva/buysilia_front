@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import CadastroCliente from './pages/CadastroCliente/CadastroCliente.js';
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <CadastroCliente />
   </React.StrictMode>,
   document.getElementById('root')
 );

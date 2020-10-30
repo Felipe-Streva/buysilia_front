@@ -1,13 +1,21 @@
 .input{
     border-color: red;
+    height: 35px;
+    border-radius: 13px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 20px;
+    outline: none;
 }
 
 .label{
     color: red;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .div{
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    margin-top: 20px;
 }
