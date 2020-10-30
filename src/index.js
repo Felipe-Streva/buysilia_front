@@ -8,9 +8,9 @@ import ProviderRegister from './pages/ProviderRegister/ProviderRegister.js';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter >
+     {/* <BrowserRouter >
 
-      <Switch>
+       <Switch>
 
         <Route exact path='/register/client'>
           <ClientRegister />
@@ -22,9 +22,9 @@ ReactDOM.render(
 
       </Switch>
 
-    </BrowserRouter>
+    </BrowserRouter>  */}
 
-
+    <ClientRegister /> 
   </React.StrictMode>,
   document.getElementById('root')
 );

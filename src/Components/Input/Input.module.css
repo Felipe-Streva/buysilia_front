@@ -1,17 +1,20 @@
 .input{
-    border-color: red;
     height: 35px;
     border-radius: 13px;
+    border: 1px solid #fc3434; 
+    color: #fc3434; 
     margin: 5px;
     padding: 5px;
     font-size: 20px;
     outline: none;
+    background: #f5f5f0;
 }
 
 .label{
-    color: red;
+    color: #fc3434;
     font-size: 20px;
     font-weight: bold;
+    margin-left: 10px;
 }
 
 .div{
