@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter , Switch , Route} from 'react-router-dom';
 import ClientRegister from './pages/ClientRegister/ClientRegister.js';
 import ProviderRegister from './pages/ProviderRegister/ProviderRegister.js';
-
-
+import './global.css'
 
 ReactDOM.render(
   <React.StrictMode>
-     {/* <BrowserRouter >
+    <BrowserRouter >
 
        <Switch>
 
@@ -22,9 +21,7 @@ ReactDOM.render(
 
       </Switch>
 
-    </BrowserRouter>  */}
-
-    <ClientRegister /> 
+    </BrowserRouter> 
   </React.StrictMode>,
   document.getElementById('root')
 );
