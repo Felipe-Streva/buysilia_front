@@ -1,0 +1,17 @@
+
+.content {
+  width: 960px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+@media (max-width: 850px) {
+    .content {
+        width: 300px;
+        flex-direction: column;
+    }
+}
