@@ -9,3 +9,12 @@ O componente `<SideHeader />` não recebe props e é para ser utilizado como pri
 ### SubmitButton
 
 O componente `<SubmitButton />` recebe uma props `text`. Essa propriedade recebe uma string que é o texto do botão. 
+
+### Header 
+
+O componente `<Header />` não recebe props e é para ser utilizado como cabeçalho da página inicial. 
+
+### CardProduct
+
+O componente `<CardProduct />` recebe 3 props, `img`, `title` e `price`. A propriedade `img` recebe uma imagem para ser adicionado no `src` da tag. A propriedade `title` recebe uma string que será o título e a propriedade `price` recebe uma string que será o valor do produto.
+
