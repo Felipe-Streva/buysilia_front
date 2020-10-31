@@ -1,28 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter , Switch , Route} from 'react-router-dom';
-import ClientRegister from './pages/ClientRegister/ClientRegister.js';
-import ProviderRegister from './pages/ProviderRegister/ProviderRegister.js';
-import './global.css'
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ClientRegister from "./pages/ClientRegister/ClientRegister.js";
+import ProviderRegister from "./pages/ProviderRegister/ProviderRegister.js";
+import "./global.css";
+import HomePage from "./pages/HomePage/HomePage.js";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter >
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
 
-       <Switch>
-
-        <Route exact path='/register/client'>
+        <Route exact path="/register/client">
           <ClientRegister />
         </Route>
 
-        <Route exact path='/register/provider'>
+        <Route exact path="/register/provider">
           <ProviderRegister />
         </Route>
-
       </Switch>
-
-    </BrowserRouter> 
+    </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
