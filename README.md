@@ -5,3 +5,7 @@ O componente `<Input />` recebe 4 props, o `title`, `type`, `name` e `percWidth`
 
 ### SideHeader
 O componente `<SideHeader />` não recebe props e é para ser utilizado como primeiro elemento da página. Usando na div pai display flex e align-itens center, e com media query em 850px alterando a flex-direction para collumn ele funciona como header lateral e para telas menores, header superior
+
+### SubmitButton
+
+O componente `<SubmitButton />` recebe uma props `text`. Essa propriedade recebe uma string que é o texto do botão. 
