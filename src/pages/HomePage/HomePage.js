@@ -44,38 +44,38 @@ function HomePage() {
       <div className={styles.content}>
         <CardProduct
           img={productOne}
-          description="Fogão Brastemp"
+          title="Fogão Brastemp"
           price="199.99"
         />
         <CardProduct
           img={productOne}
-          description="Fogão Brastemp"
+          title="Fogão Brastemp"
           price="199.99"
         />
         <CardProduct
           img={productOne}
-          description="Fogão Brastemp"
+          title="Fogão Brastemp"
           price="199.99"
         />
         <CardProduct
           img={productOne}
-          description="Fogão Brastemp"
+          title="Fogão Brastemp"
           price="199.99"
         />
 
         <CardProduct
           img={productOne}
-          description="Fogão Brastemp"
+          title="Fogão Brastemp"
           price="199.99"
         />
         <CardProduct
           img={productOne}
-          description="Fogão Brastemp"
+          title="Fogão Brastemp"
           price="199.99"
         />
         <CardProduct
           img={productOne}
-          description="Fogão Brastemp"
+          title="Fogão Brastemp"
           price="199.99"
         />
       </div>
