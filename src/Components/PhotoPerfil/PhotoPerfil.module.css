@@ -1,0 +1,28 @@
+.div{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img{
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+}
+
+.p{
+    margin-left: 20px;
+    color: #fc3434;
+}
+
+.p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media(max-width:850px){
+    .div{
+        flex-direction: column;
+    }
+}

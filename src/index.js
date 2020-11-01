@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+import "./global.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import ClientRegister from "./pages/ClientRegister/ClientRegister.js";
 import ProviderRegister from "./pages/ProviderRegister/ProviderRegister.js";
-import "./global.css";
 import HomePage from "./pages/HomePage/HomePage.js";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import ClientLogin from "./pages/ClientLogin/ClientLogin.js";
 import ProviderLogin from "./pages/ProviderLogin/ProviderLogin.js";
+import ProviderEdit from './pages/ProviderEdit/ProviderEdit.js';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -31,6 +34,10 @@ ReactDOM.render(
 
         <Route exact path="/register/provider">
           <ProviderRegister />
+        </Route>
+
+        <Route exact path="/edit/provider">
+          <ProviderEdit />
         </Route>
       </Switch>
     </BrowserRouter>

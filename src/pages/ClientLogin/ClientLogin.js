@@ -15,10 +15,10 @@ function ClientLogin() {
             Faça seu login
           </h2>
           <form className={styles.form}>
-            <Input title="Usuário" type="text" name="user" percWidth="50%" />
-            <Input title="Senha" type="password" name="paddword" percWidth="50%" />
+            <Input title="Usuário" type="text" name="user" percWidth="70%" />
+            <Input title="Senha" type="password" name="paddword" percWidth="70%" />
             
-            <SubmitButton text="Entrar" />
+            <SubmitButton text="Entrar" minWidth='250px' marginTop='50px' />
           </form>
         </div>
       </div>

@@ -1,19 +1,20 @@
-import React from 'react';
+import React from "react";
 import Input from "../../Components/Input/Input.js";
-import styles from "./ProviderRegister.module.css";
+import styles from "./ProviderEdit.module.css";
 import SideHeader from "../../Components/SideHeader/SideHeader";
 import SubmitButton from "../../Components/SubmitButton/SubmitButton";
 
-export default function ProviderRegister(){
-    return (
-        <div className={styles.body}>
-            <SideHeader />
+
+function ProviderEdit() {
+  return (
+    <div className={styles.body}>
+      <SideHeader />
             <div className={styles.container}>
                 <div className={styles.div}>
                     <h2 className={styles.h2}>
-                        Olá, Fornecedor! <br />
-                        Cadastre-se
+                        Seja bem-vindo!!
                     </h2>
+
                     <form className={styles.form}>
                         <Input title="Nome" type="text" name="name" percWidth="100%" />
                         <Input title="CNPJ" type="text" name="cnpj" percWidth="50%" />
@@ -21,11 +22,12 @@ export default function ProviderRegister(){
                         <Input title="Razão Social" type="text" name="company_name" percWidth="100%" />
                         <Input title="Endereço" type="text" name="address" percWidth="100%" />
 
-                        <SubmitButton text="Cadastrar" minWidth='250px' marginTop='50px' />
+                        <SubmitButton text="Confirmar" minWidth='250px' marginTop='50px' />
                     </form>
                 </div>
             </div>
-        </div>
-        
-    )
+    </div>
+  );
 }
+
+export default ProviderEdit

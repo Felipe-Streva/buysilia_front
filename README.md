@@ -8,7 +8,8 @@ O componente `<SideHeader />` não recebe props e é para ser utilizado como pri
 
 ### SubmitButton
 
-O componente `<SubmitButton />` recebe uma props `text`. Essa propriedade recebe uma string que é o texto do botão. 
+O componente `<SubmitButton />` recebe props `text`, `minWidth` e `marginTop`. 
+A propriedade `text` recebe uma string que é o texto do botão. A propriedade `minWidth` recebe uma string com a largura minima do botão e a propriedade `marginTop` recebe a margen acima do botão.  
 
 ### Header 
 

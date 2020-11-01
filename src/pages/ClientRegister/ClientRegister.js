@@ -37,7 +37,7 @@ function ClientRegister() {
               name="address"
               percWidth="100%"
             />
-            <SubmitButton text="Cadastrar" />
+            <SubmitButton text="Cadastrar" minWidth='250px' marginTop='50px' />
           </form>
         </div>
       </div>
