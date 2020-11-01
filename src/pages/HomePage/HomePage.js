@@ -42,42 +42,14 @@ function HomePage() {
 
       {/* Carousel end */}
       <div className={styles.content}>
-        <CardProduct
-          img={productOne}
-          title="Fogão Brastemp"
-          price="199.99"
-        />
-        <CardProduct
-          img={productOne}
-          title="Fogão Brastemp"
-          price="199.99"
-        />
-        <CardProduct
-          img={productOne}
-          title="Fogão Brastemp"
-          price="199.99"
-        />
-        <CardProduct
-          img={productOne}
-          title="Fogão Brastemp"
-          price="199.99"
-        />
+        <CardProduct img={productOne} title="Fogão Brastemp" price="199.99" />
+        <CardProduct img={productOne} title="Fogão Brastemp" price="199.99" />
+        <CardProduct img={productOne} title="Fogão Brastemp" price="199.99" />
+        <CardProduct img={productOne} title="Fogão Brastemp" price="199.99" />
 
-        <CardProduct
-          img={productOne}
-          title="Fogão Brastemp"
-          price="199.99"
-        />
-        <CardProduct
-          img={productOne}
-          title="Fogão Brastemp"
-          price="199.99"
-        />
-        <CardProduct
-          img={productOne}
-          title="Fogão Brastemp"
-          price="199.99"
-        />
+        <CardProduct img={productOne} title="Fogão Brastemp" price="199.99" />
+        <CardProduct img={productOne} title="Fogão Brastemp" price="199.99" />
+        <CardProduct img={productOne} title="Fogão Brastemp" price="199.99" />
       </div>
     </div>
   );
