@@ -11,6 +11,7 @@ import HomePage from "./pages/HomePage/HomePage.js";
 import ClientLogin from "./pages/ClientLogin/ClientLogin.js";
 import ProviderLogin from "./pages/ProviderLogin/ProviderLogin.js";
 import ProviderEdit from './pages/ProviderEdit/ProviderEdit.js';
+import ClientEdit from "./pages/ClientEdit/ClientEdit";
 
 export default function App(){
     return (
@@ -34,6 +35,10 @@ export default function App(){
 
                 <Route exact path="/register/provider">
                 <ProviderRegister />
+                </Route>
+
+                <Route exact path="/edit/client">
+                <ClientEdit />
                 </Route>
 
                 <Route exact path="/edit/provider">
