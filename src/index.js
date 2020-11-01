@@ -6,6 +6,7 @@ import ProviderRegister from "./pages/ProviderRegister/ProviderRegister.js";
 import "./global.css";
 import HomePage from "./pages/HomePage/HomePage.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ClientLogin from "./pages/ClientLogin/ClientLogin.js";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,6 +14,10 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/">
           <HomePage />
+        </Route>
+
+        <Route exact path="/login/client">
+          <ClientLogin />
         </Route>
 
         <Route exact path="/register/client">
