@@ -9,7 +9,7 @@ import SubmitButton from "../../Components/SubmitButton/SubmitButton";
 import { Context } from '../../SessionContext'
 
 function ClientLogin() {
-  const { handleLoginProvider } = useContext(Context)
+  const { handleLoginClient } = useContext(Context)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isHidden, setIsHidden] = useState(true)
@@ -28,14 +28,14 @@ function ClientLogin() {
                       body: JSON.stringify(body), mode: 'cors', cache: 'default' })
                         .then(data => data.json())
                         .then((row) => {
-                          handleLoginProvider(row.client_id)                          
+                          handleLoginClient(row.client_id)                          
                           return row.client_id                          
                         }).catch((err)=>{
                           console.log(err)
                         })
     
     if(clientID>0){
-      history.push('/edit/client')
+      history.replace('/edit/client')
     } else {
       setIsHidden(false)
       setTimeout(()=>{
