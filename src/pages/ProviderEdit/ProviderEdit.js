@@ -1,4 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
+import { useHistory } from 'react-router-dom';
+
 import Input from "../../Components/Input/Input.js";
 import styles from "./ProviderEdit.module.css";
 import SideHeader from "../../Components/SideHeader/SideHeader";
@@ -10,6 +12,7 @@ import {Context} from '../../SessionContext';
 function ProviderEdit() {
   const {session} = useContext(Context)
   const [data, setData] = useState({})
+  const history = useHistory()
 
   useEffect(() => {
     ( async () => {
@@ -17,6 +20,10 @@ function ProviderEdit() {
       setData(data)
     })()
   },[session.provider])
+
+  if(session.provider===0){
+    history.replace('/login/provider')
+  }
 
   return (
     <div className={styles.body}>

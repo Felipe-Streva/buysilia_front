@@ -36,6 +36,14 @@
   flex-direction: column;
 }
 
+.hidden{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
 @media (max-width: 850px) {
   .body {
     flex-direction: column;
