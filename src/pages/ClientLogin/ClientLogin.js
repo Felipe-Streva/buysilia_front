@@ -12,6 +12,7 @@ function ClientLogin() {
   const { handleLoginProvider } = useContext(Context)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [isHidden, setIsHidden] = useState(true)
   const history = useHistory()
 
 
@@ -35,7 +36,12 @@ function ClientLogin() {
     
     if(clientID>0){
       history.push('/edit/client')
-    }   
+    } else {
+      setIsHidden(false)
+      setTimeout(()=>{
+        setIsHidden(true)
+      },2000)
+    }
     
   }
 
@@ -51,7 +57,7 @@ function ClientLogin() {
           <form className={styles.form} onSubmit={checkLogin}  >
             <Input title="Email" type="text" name="email" percWidth="70%" setField={setEmail} />
             <Input title="Senha" type="password" name="password" percWidth="70%" setField={setPassword} />
-            
+            <p className={isHidden ? styles.hidden: styles.show}>Login ou senha incorretos</p>
             <SubmitButton text="Entrar" minWidth='250px' marginTop='50px' />
           </form>
         </div>
