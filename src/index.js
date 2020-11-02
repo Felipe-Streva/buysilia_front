@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter , Switch , Route} from 'react-router-dom';
-import ClientRegister from './pages/ClientRegister/ClientRegister.js';
-import ProviderRegister from './pages/ProviderRegister/ProviderRegister.js';
-
-
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import ClientRegister from './pages/ClientRegister/ClientRegister';
+import ProviderRegister from './pages/ProviderRegister/ProviderRegister';
 
 ReactDOM.render(
   <React.StrictMode>
-     {/* <BrowserRouter >
+     <BrowserRouter >
 
        <Switch>
 
@@ -22,9 +20,8 @@ ReactDOM.render(
 
       </Switch>
 
-    </BrowserRouter>  */}
+    </BrowserRouter> 
 
-    <ClientRegister /> 
   </React.StrictMode>,
   document.getElementById('root')
 );
