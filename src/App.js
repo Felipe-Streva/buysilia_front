@@ -12,11 +12,13 @@ import HomePage from "./pages/HomePage/HomePage.js";
 import ClientLogin from "./pages/ClientLogin/ClientLogin.js";
 import ProviderLogin from "./pages/ProviderLogin/ProviderLogin.js";
 import ProviderEdit from './pages/ProviderEdit/ProviderEdit.js';
+import ClientEdit from "./pages/ClientEdit/ClientEdit";
 
 
 export default function App(){
 
     return (
+
         <Session>
             <BrowserRouter>
                 <Switch>
@@ -42,6 +44,10 @@ export default function App(){
 
                     <Route exact path="/edit/provider">
                         <ProviderEdit />
+                    </Route>
+      
+                    <Route exact path="/edit/client">
+                       <ClientEdit />
                     </Route>
                 </Switch>
             </BrowserRouter>
