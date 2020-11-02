@@ -1,6 +1,7 @@
 import React from "react";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import {Session} from './SessionContext'
 
 import "./global.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,34 +13,38 @@ import ClientLogin from "./pages/ClientLogin/ClientLogin.js";
 import ProviderLogin from "./pages/ProviderLogin/ProviderLogin.js";
 import ProviderEdit from './pages/ProviderEdit/ProviderEdit.js';
 
+
 export default function App(){
+
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route exact path="/">
-                <HomePage />
-                </Route>
+        <Session>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/">
+                        <HomePage />
+                    </Route>
 
-                <Route exact path="/login/client">
-                <ClientLogin />
-                </Route>
+                    <Route exact path="/login/client">
+                        <ClientLogin />
+                    </Route>
 
-                <Route exact path="/login/provider">
-                <ProviderLogin />
-                </Route>
+                    <Route exact path="/login/provider">
+                        <ProviderLogin />
+                    </Route>
 
-                <Route exact path="/register/client">
-                <ClientRegister />
-                </Route>
+                    <Route exact path="/register/client">
+                        <ClientRegister />
+                    </Route>
 
-                <Route exact path="/register/provider">
-                <ProviderRegister />
-                </Route>
+                    <Route exact path="/register/provider">
+                        <ProviderRegister />
+                    </Route>
 
-                <Route exact path="/edit/provider">
-                <ProviderEdit />
-                </Route>
-            </Switch>
-        </BrowserRouter>
+                    <Route exact path="/edit/provider">
+                        <ProviderEdit />
+                    </Route>
+                </Switch>
+            </BrowserRouter>
+        </Session>
     )
 }
