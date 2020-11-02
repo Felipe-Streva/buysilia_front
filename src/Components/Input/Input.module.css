@@ -1,5 +1,10 @@
+body{
+    position:absolute;
+    margin:0%;
+    }
+    
 .input{
-    height: 35px;
+    height: 100%;
     border-radius: 13px;
     border: 1px solid #fc3434; 
     color: #fc3434; 

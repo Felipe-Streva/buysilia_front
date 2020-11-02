@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter , Switch , Route} from 'react-router-dom';
 import ClientRegister from './pages/ClientRegister/ClientRegister.js';
 import ProviderRegister from './pages/ProviderRegister/ProviderRegister.js';
+import ProductRegister from './pages/ProductRegister/ProductRegister';
 
 
 
 ReactDOM.render(
   <React.StrictMode>
-     {/* <BrowserRouter >
+     <BrowserRouter >
 
        <Switch>
 
@@ -20,11 +21,14 @@ ReactDOM.render(
           <ProviderRegister />
         </Route>
 
+        <Route exact path='/register/product'>
+          <ProductRegister />
+        </Route>
+
       </Switch>
 
-    </BrowserRouter>  */}
-
-    <ClientRegister /> 
+    </BrowserRouter> 
+ 
   </React.StrictMode>,
   document.getElementById('root')
 );
