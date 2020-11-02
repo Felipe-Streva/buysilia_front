@@ -1,4 +1,5 @@
 import React, { useContext,  useState } from "react";
+import {useHistory} from 'react-router-dom';
 
 import Input from "../../Components/Input/Input.js";
 import styles from "./ClientLogin.module.css";
@@ -8,9 +9,10 @@ import SubmitButton from "../../Components/SubmitButton/SubmitButton";
 import { Context } from '../../SessionContext'
 
 function ClientLogin() {
-  const { session, handleLoginClient, handleLoginProvider } = useContext(Context)
+  const { handleLoginProvider } = useContext(Context)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const history = useHistory()
 
 
   const checkLogin = async (event) => {
@@ -25,23 +27,15 @@ function ClientLogin() {
                       body: JSON.stringify(body), mode: 'cors', cache: 'default' })
                         .then(data => data.json())
                         .then((row) => {
-                          handleLoginClient(row.client_id)                          
+                          handleLoginProvider(row.client_id)                          
                           return row.client_id                          
                         }).catch((err)=>{
                           console.log(err)
                         })
     
-    console.log(session)
-    setTimeout(() => {
-      if(clientID>0){
-
-        if(session.provider>0){
-          window.location.replace('/')
-        }
-      }
-    },300)
-    
-    
+    if(clientID>0){
+      history.push('/edit/client')
+    }   
     
   }
 

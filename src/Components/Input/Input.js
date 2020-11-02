@@ -16,7 +16,10 @@ export default function Input(props){
 
     const handleValue = (event) => {
         setValue(event.target.value)
-        props.setField(event.target.value)
+        if(props.setField){
+            props.setField(event.target.value)
+        }
+        
     }
 
     return (
