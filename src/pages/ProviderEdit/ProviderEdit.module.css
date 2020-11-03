@@ -1,7 +1,7 @@
 .body {
     display: flex;
 }
-
+  
 .container {
     width: 100%;
     background: #f5f5f0;
@@ -12,7 +12,6 @@
 }
 
 .div {
-
     width: 100%;
     max-width: 1100px;
     display: flex;
@@ -33,6 +32,12 @@
     flex-wrap: wrap;
     width: 80%;
     justify-content: space-between;
+}
+
+.span{
+    font-size: 40px;
+    color: #333333;
+    font-weight: bold;
 }
 
 @media (max-width: 850px) {
