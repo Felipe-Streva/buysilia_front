@@ -8,6 +8,9 @@ export default function Input(props){
 
     useEffect(() => {
        window.addEventListener('resize', () => setWindownWidth(window.innerWidth))
+       return (() => {
+            window.removeEventListener('resize', () => setWindownWidth(window.innerWidth))
+        })
     },[])
 
     useEffect(() => {

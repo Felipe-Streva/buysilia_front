@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Input from '../../Components/Input/Input.js'
 import styles from './ProductRegister.module.css'
 import SideHeader from '../../Components/SideHeader/SideHeader'
-import SubmitButton from '../../Components/SubmitButton/SubmitButton'
+import Button from '../../Components/Button/Button'
 
 import {Context} from '../../SessionContext';
 
@@ -32,7 +32,7 @@ function ProductRegister() {
                 <Input title='Qtd Estoque' type='text' name='stock' percWidth='30%' />
                 <Input title='Avaliação' type='text' name='evaluation' percWidth='30%' />
 
-                <SubmitButton text="Cadastrar" minWidth="250px" marginTop="50px" />
+                <Button type='submit' text="Cadastrar" minWidth="250px" marginTop="50px" />
             </form>
             </div>
         </div> 

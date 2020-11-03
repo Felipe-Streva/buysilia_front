@@ -2,7 +2,7 @@ import React from 'react';
 import Input from "../../Components/Input/Input.js";
 import styles from "./ProviderRegister.module.css";
 import SideHeader from "../../Components/SideHeader/SideHeader";
-import SubmitButton from "../../Components/SubmitButton/SubmitButton";
+import Button from "../../Components/Button/Button";
 
 export default function ProviderRegister(){
     return (
@@ -21,7 +21,7 @@ export default function ProviderRegister(){
                         <Input title="Razão Social" type="text" name="company_name" percWidth="100%" />
                         <Input title="Endereço" type="text" name="address" percWidth="100%" />
 
-                        <SubmitButton text="Cadastrar" minWidth='250px' marginTop='50px' />
+                        <Button type='submit' text="Cadastrar" minWidth='250px' marginTop='50px' />
                     </form>
                 </div>
             </div>

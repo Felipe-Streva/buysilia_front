@@ -4,8 +4,7 @@ import {useHistory, Link} from 'react-router-dom';
 import Input from "../../Components/Input/Input.js";
 import styles from "./ClientLogin.module.css";
 import SideHeader from "../../Components/SideHeader/SideHeader";
-import SubmitButton from "../../Components/SubmitButton/SubmitButton";
-import {Button} from 'react-bootstrap'
+import Button from "../../Components/Button/Button";
 
 import { Context } from '../../SessionContext'
 
@@ -64,9 +63,9 @@ function ClientLogin() {
             <Input title="Senha" type="password" name="password" percWidth="70%" setField={setPassword} />
             <p className={isHidden ? styles.hidden: styles.show}>Login ou senha incorretos</p>
             <div>
-              <SubmitButton text="Entrar" minWidth='250px' marginTop='50px' />
+              <Button type='submit' text="Entrar" minWidth='250px' marginTop='50px' />
 
-              <Link to='/register/client'><Button>Cadastrar</Button> </Link>
+              <Link to='/register/client'><Button text="Cadastrar" minWidth='250px' marginTop='50px' /> </Link>
             </div>
           </form>
         </div>

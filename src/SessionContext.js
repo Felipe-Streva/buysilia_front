@@ -14,6 +14,13 @@ function Session({ children }) {
         setLoading(false)
     },[])
 
+    function handleLoggout(){
+        setSession({
+            client: 0,
+            provider: 0
+        })
+    }
+
     function handleLoginClient(client_id){
 
         setSession({
@@ -34,7 +41,7 @@ function Session({ children }) {
     }
 
     return (
-        <Context.Provider value={{session, handleLoginClient, handleLoginProvider}} >
+        <Context.Provider value={{session, handleLoginClient, handleLoginProvider, handleLoggout}} >
             {children}
         </Context.Provider>
     );

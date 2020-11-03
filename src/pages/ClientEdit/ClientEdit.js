@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import Input from "../../Components/Input/Input.js";
 import styles from "./ClientEdit.module.css";
 import SideHeader from "../../Components/SideHeader/SideHeader";
-import SubmitButton from "../../Components/SubmitButton/SubmitButton";
+import Button from "../../Components/Button/Button";
 import PhotoPerfil from '../../Components/PhotoPerfil/PhotoPerfil';
 
 import {Context} from '../../SessionContext';
@@ -49,7 +49,7 @@ function ClientEdit() {
             <Input title="Celular" type="text" name="phone" percWidth="50%" >{data.phone}</Input>
             <Input title="Endereço" type="text" name="address" percWidth="100%" >{data.address}</Input>
 
-            <SubmitButton text="Confirmar" minWidth="250px" marginTop="50px" />
+            <Button type='submit' text="Confirmar" minWidth="250px" marginTop="50px" />
           </form>
         </div>
       </div>

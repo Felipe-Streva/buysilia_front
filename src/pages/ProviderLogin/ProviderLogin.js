@@ -1,10 +1,10 @@
 import React, {useState, useContext} from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import Input from "../../Components/Input/Input.js";
 import styles from "./ProviderLogin.module.css";
 import SideHeader from "../../Components/SideHeader/SideHeader";
-import SubmitButton from "../../Components/SubmitButton/SubmitButton";
+import Button from "../../Components/Button/Button";
 
 import { Context } from '../../SessionContext'
 
@@ -59,7 +59,12 @@ function ProviderLogin() {
           <form className={styles.form} onSubmit={checkCNPJ}>
             <Input title="CNPJ" type="text" name="user" percWidth="70%" setField={setCnpj} />
             <p className={isHidden ? styles.hidden: styles.show}>CNPJ Incorreto ou não registrado</p>
-            <SubmitButton text="Entrar" minWidth='250px' marginTop='50px' />
+
+            <div className={styles.buttons}>
+              <Button type='submit' text="Entrar" minWidth='200px' marginTop='50px' />
+              <Link to='/register/provider'><Button text="Cadastrar" minWidth='150px' marginTop='50px' /> </Link>
+            </div>
+            
           </form>
         </div>
       </div>

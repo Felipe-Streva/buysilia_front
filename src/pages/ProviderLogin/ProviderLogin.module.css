@@ -31,9 +31,16 @@
   display: flex;
   flex-wrap: wrap;
   width: 80%;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  justify-content:center;
+  align-items: center;
+
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
 }
 
 .hidden{
@@ -57,5 +64,12 @@
 
   .h2 {
     padding-top: 30px;
+  }
+}
+
+@media(max-width: 600px){
+  .buttons{
+    flex-direction: column;
+    align-items: center;
   }
 }

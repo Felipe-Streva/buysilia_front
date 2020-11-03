@@ -1,11 +1,10 @@
 import React, {useContext, useEffect, useState} from "react";
 import { useHistory, Link } from 'react-router-dom';
 
-import {Button} from 'react-bootstrap';
 import Input from "../../Components/Input/Input.js";
 import styles from "./ProviderEdit.module.css";
 import SideHeader from "../../Components/SideHeader/SideHeader";
-import SubmitButton from "../../Components/SubmitButton/SubmitButton";
+import Button from "../../Components/Button/Button";
 
 import {Context} from '../../SessionContext';
 
@@ -43,8 +42,8 @@ function ProviderEdit() {
                   <Input title="Razão Social" type="text" name="company_name" percWidth="100%" >{data.company_name}</Input>
                   <Input title="Endereço" type="text" name="address" percWidth="100%" >{data.address}</Input>
 
-                  <SubmitButton text="Confirmar" minWidth='250px' marginTop='50px' />
-                  <Link to='/register/product'><Button>Adicionar Produtos</Button> </Link>
+                  <Button type='submit' text="Confirmar" minWidth='250px' marginTop='50px' />
+                  <Link to='/register/product'><Button text="Adicionar Produto" minWidth='250px' marginTop='50px' /> </Link>
               </form>
           </div>
       </div>

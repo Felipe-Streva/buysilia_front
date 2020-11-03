@@ -2,7 +2,7 @@ import React from "react";
 import Input from "../../Components/Input/Input.js";
 import styles from "./ClientRegister.module.css";
 import SideHeader from "../../Components/SideHeader/SideHeader";
-import SubmitButton from "../../Components/SubmitButton/SubmitButton";
+import Button from "../../Components/Button/Button";
 
 function ClientRegister() {
   return (
@@ -37,7 +37,7 @@ function ClientRegister() {
               name="address"
               percWidth="100%"
             />
-            <SubmitButton text="Cadastrar" minWidth='250px' marginTop='50px' />
+            <Button type='submit' text="Cadastrar" minWidth='250px' marginTop='50px' />
           </form>
         </div>
       </div>
