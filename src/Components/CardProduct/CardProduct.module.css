@@ -1,0 +1,26 @@
+.card {
+  width: 300px;
+  height: 315px;
+  border: 2px solid #fc3434;
+  background: #f5f5f0;
+}
+
+.img {
+  width: 296px;
+  height: 200px;
+}
+
+.title {
+  text-align: center;
+  margin: 15px 0px;
+  color: #fc3434;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-around;
+}
+
+.price {
+  font-size: 20px;
+}
