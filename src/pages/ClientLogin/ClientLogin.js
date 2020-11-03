@@ -1,10 +1,11 @@
 import React, { useContext,  useState } from "react";
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 
 import Input from "../../Components/Input/Input.js";
 import styles from "./ClientLogin.module.css";
 import SideHeader from "../../Components/SideHeader/SideHeader";
 import SubmitButton from "../../Components/SubmitButton/SubmitButton";
+import {Button} from 'react-bootstrap'
 
 import { Context } from '../../SessionContext'
 
@@ -62,7 +63,11 @@ function ClientLogin() {
             <Input title="Email" type="text" name="email" percWidth="70%" setField={setEmail} />
             <Input title="Senha" type="password" name="password" percWidth="70%" setField={setPassword} />
             <p className={isHidden ? styles.hidden: styles.show}>Login ou senha incorretos</p>
-            <SubmitButton text="Entrar" minWidth='250px' marginTop='50px' />
+            <div>
+              <SubmitButton text="Entrar" minWidth='250px' marginTop='50px' />
+
+              <Link to='/register/client'><Button>Cadastrar</Button> </Link>
+            </div>
           </form>
         </div>
       </div>
