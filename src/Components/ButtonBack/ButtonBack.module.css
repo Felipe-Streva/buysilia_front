@@ -1,0 +1,16 @@
+.buttonBack{
+    font:bold 20px "Courier New", Courier, monospace;
+    font-style:normal;
+    color:#ffffff;
+    background:#fc3434  ;
+    border:1px solid #da1f06;
+    border-radius:90px 90px 90px 90px;
+    cursor:pointer;
+    position:relative;
+    right: -45%;
+    
+    }
+    
+    .buttonBack:hover{
+        background: #c50000;
+    }
