@@ -24,7 +24,7 @@ export default function Input(props){
 
     return (
         
-        <div className={styles.div} style={windowWidth < 850 ? {width: '100%'} :{width: props.percWidth}}>
+        <div className={styles.div} style={windowWidth < 850 ? {width: '100%'} :{width: props.percWidth}} >
             <label className={styles.label}>{props.title}</label>
             <input type={props.type} className={styles.input} name={props.name} value={value} onChange={handleValue} required />
         </div>

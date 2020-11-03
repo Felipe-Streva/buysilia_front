@@ -9,7 +9,7 @@ import SubmitButton from "../../Components/SubmitButton/SubmitButton";
 import { Context } from '../../SessionContext'
 
 function ProviderLogin() {
-  const { handleLoginProvider } = useContext(Context)
+  const { session, handleLoginProvider } = useContext(Context)
   const [cnpj, setCnpj] = useState('')
   const [isHidden, setIsHidden] = useState(true)
   const history = useHistory()
@@ -41,6 +41,10 @@ function ProviderLogin() {
       },2000)
     }
 
+  }
+
+  if(session.provider>0){
+    history.replace('/edit/provider')
   }
 
   return (

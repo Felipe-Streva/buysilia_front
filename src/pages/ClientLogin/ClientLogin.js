@@ -9,7 +9,7 @@ import SubmitButton from "../../Components/SubmitButton/SubmitButton";
 import { Context } from '../../SessionContext'
 
 function ClientLogin() {
-  const { handleLoginClient } = useContext(Context)
+  const { session, handleLoginClient } = useContext(Context)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [isHidden, setIsHidden] = useState(true)
@@ -43,6 +43,10 @@ function ClientLogin() {
       },2000)
     }
     
+  }
+
+  if(session.client>0){
+    history.replace('/edit/client')
   }
 
   return (

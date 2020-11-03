@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
+import {Button} from 'react-bootstrap';
 import Input from "../../Components/Input/Input.js";
 import styles from "./ProviderEdit.module.css";
 import SideHeader from "../../Components/SideHeader/SideHeader";
@@ -43,6 +44,7 @@ function ProviderEdit() {
                   <Input title="Endereço" type="text" name="address" percWidth="100%" >{data.address}</Input>
 
                   <SubmitButton text="Confirmar" minWidth='250px' marginTop='50px' />
+                  <Link to='/register/product'><Button>Adicionar Produtos</Button> </Link>
               </form>
           </div>
       </div>
