@@ -12,8 +12,12 @@ import {Context} from '../../SessionContext';
 function ClientEdit() {
   const {session} = useContext(Context)
   const [data, setData] = useState({})
-  const [dataPhoto, setDataPhoto] = useState({})
+  const [urlPhoto, setURLPhoto] = useState(null)
   const history = useHistory()
+
+  if(session.client===0){
+    history.replace('/login/client')
+  }
 
   useEffect(() => {
     ( async () => {
@@ -25,13 +29,11 @@ function ClientEdit() {
   useEffect(() => {
     ( async () => {
       const dataPhoto = await fetch(`http://localhost:3333/client/photos/${session.client}`).then(data => data.json())
-      setDataPhoto(dataPhoto)
+      setURLPhoto(dataPhoto.url_client)
     })()
   },[session.client])
 
-  if(session.client===0){
-    history.replace('/login/client')
-  }
+  
 
   return (
     <div className={styles.body}>
@@ -40,7 +42,7 @@ function ClientEdit() {
         <div className={styles.div}>
           <h2 className={styles.h2}>Seja bem vindo!<br/>{data.first_name}!</h2>
 
-          <PhotoPerfil urlPhoto={dataPhoto.url_client} />
+          <PhotoPerfil urlPhoto={urlPhoto} />
 
           <form className={styles.form}>
             <Input title="Nome" type="text" name="first_name" percWidth="50%" >{data.first_name}</Input>

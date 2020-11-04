@@ -18,10 +18,10 @@ function InfoProduct() {
   const [stock, setStock] = useState(0)
   const history = useHistory()
 
-  const [show, setShow] = useState(false);
   const [confirmBought, setConfirmBought] = useState(false)
   const [showFailBought, setShowFailBought] = useState(false)
 
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
