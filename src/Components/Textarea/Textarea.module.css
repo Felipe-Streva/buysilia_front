@@ -1,0 +1,15 @@
+.label{
+    color: #fc3434;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.textarea {
+    border-color: #fc3434;
+    border-radius: 13px;
+    resize: none;
+    outline: none;
+    color: #1a1a1a;
+    background: #f5f5f0;
+}
