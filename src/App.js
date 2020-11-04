@@ -14,6 +14,7 @@ import ProviderLogin from "./pages/ProviderLogin/ProviderLogin.js";
 import ProviderEdit from './pages/ProviderEdit/ProviderEdit.js';
 import ClientEdit from "./pages/ClientEdit/ClientEdit";
 import ProductRegister from './pages/ProductRegister/ProductRegister';
+import InfoProduct from "./pages/InfoProduct/InfoProduct";
 
 
 export default function App(){
@@ -55,7 +56,9 @@ export default function App(){
                        <ClientEdit />
                     </Route>
 
-                    
+                    <Route exact path="/info/product">
+                        <InfoProduct />
+                    </Route>
                 </Switch>
             </BrowserRouter>
         </Session>
