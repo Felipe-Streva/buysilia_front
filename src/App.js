@@ -56,7 +56,7 @@ export default function App(){
                        <ClientEdit />
                     </Route>
 
-                    <Route exact path="/info/product">
+                    <Route exact path="/info/product/:productID">
                         <InfoProduct />
                     </Route>
                 </Switch>

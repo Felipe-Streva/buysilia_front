@@ -8,8 +8,11 @@
 .textarea {
     border-color: #fc3434;
     border-radius: 13px;
-    resize: none;
-    outline: none;
+    border-style: solid;
     color: #1a1a1a;
     background: #f5f5f0;
+    width: 250px;
+    min-height: 100px;
+    text-align: center;
+    padding: 25px;
 }
