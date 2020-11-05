@@ -1,14 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useContext} from "react";
+import { useHistory } from "react-router-dom";
+
 import styles from "./Logout.module.css";
 
-function Logout() {
+import {Context} from '../../SessionContext';
+
+function Logout(props) {
+  const { handleLoggout } = useContext(Context)
+  const history = useHistory()
+
+  const logout = () => {
+    handleLoggout()
+    history.replace('/')
+  }
+
   return (
-    <div>
-      <Link to="/">
-        <h3 className={styles.logout}>Sair</h3>
-      </Link>
-    </div>
+    <li className={props.logoutStyle} onClick={logout}>
+      <p className={styles.logout}>Sair</p>
+    </li>
   );
 }
 

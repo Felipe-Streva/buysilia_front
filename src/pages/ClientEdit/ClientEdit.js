@@ -12,12 +12,8 @@ import {Context} from '../../SessionContext';
 function ClientEdit() {
   const {session} = useContext(Context)
   const [data, setData] = useState({})
-  const [urlPhoto, setURLPhoto] = useState(null)
+  const [dataPhoto, setDataPhoto] = useState({})
   const history = useHistory()
-
-  if(session.client===0){
-    history.replace('/login/client')
-  }
 
   useEffect(() => {
     ( async () => {
@@ -29,11 +25,17 @@ function ClientEdit() {
   useEffect(() => {
     ( async () => {
       const dataPhoto = await fetch(`http://localhost:3333/client/photos/${session.client}`).then(data => data.json())
-      setURLPhoto(dataPhoto.url_client)
+      setDataPhoto(dataPhoto)
     })()
   },[session.client])
 
-  
+  if(session.client===0){
+    history.replace('/login/client')
+  }
+
+  const prevent = (event) => {
+    event.preventDefault()
+  }
 
   return (
     <div className={styles.body}>
@@ -42,9 +44,9 @@ function ClientEdit() {
         <div className={styles.div}>
           <h2 className={styles.h2}>Seja bem vindo!<br/>{data.first_name}!</h2>
 
-          <PhotoPerfil urlPhoto={urlPhoto} />
+          <PhotoPerfil urlPhoto={dataPhoto.url_client} />
 
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={prevent}>
             <Input title="Nome" type="text" name="first_name" percWidth="50%" >{data.first_name}</Input>
             <Input title="Sobrenome" type="text" name="last_name" percWidth="50%" >{data.last_name}</Input>
             <Input title="CPF" type="text" name="cpf" percWidth="50%" >{data.cpf}</Input>

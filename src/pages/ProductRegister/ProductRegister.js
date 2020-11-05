@@ -1,5 +1,7 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import { useHistory } from 'react-router-dom';
+
+import { Modal, Button as ButtonBootstrap } from 'react-bootstrap';
 
 import Input from '../../Components/Input/Input.js'
 import styles from './ProductRegister.module.css'
@@ -12,30 +14,100 @@ function ProductRegister() {
     const {session} = useContext(Context)
     const history = useHistory()
 
+    const [name, setName] = useState()
+    const [description, setDescription] = useState()
+    const [price, setPrice] = useState()
+    const [evaluation, setEvaluation] = useState()
+    const [stock, setStock] = useState()
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const [show2, setShow2] = useState(false);
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
+    const [errors, setErrors] = useState([])
+
     if(session.provider===0){
         history.replace('/login/provider')
-      }
+    }
+
+    const submitRegisterProduct = async (event) => {
+        event.preventDefault();
+
+        const body = {
+            provider_id: session.provider,
+            name: name,
+            description: description,
+            price: price,
+            evaluation: evaluation,
+            stock: stock,
+          }
+      
+        const response = await fetch('http://localhost:3333/product', { method: 'POST',
+                        headers: {'Accept': 'application/json','Content-Type': 'application/json'},
+                        body: JSON.stringify(body), mode: 'cors', cache: 'default' })
+                            .then(data => data.json())
+                            .catch((err)=>{
+                            console.log(err)
+                            })
+        
+        if(response.product_id>0){
+            handleShow()
+        } else if(response.errors){
+            setErrors(response.errors)
+            handleShow2()
+        }
+      
+    }
 
     return (
         <div className={styles.body} >
 
-        <SideHeader/>
+            <SideHeader/>
 
-        <div className={styles.container}>
-            <div className={styles.div}>
-            <h2 className={styles.h2} >Cadastrar Produto </h2>
+            <div className={styles.container}>
+                <div className={styles.div}>
+                <h2 className={styles.h2} >Cadastrar Produto </h2>
 
-            <form className={styles.form}>
-                <Input title='Nome' type='text' name='name' percWidth='100%' />
-                <Input title='Descrição' type='text' name='description' percWidth='100%' heigth='200px'/>
-                <Input title='Preço em R$' type='text' name='price' percWidth='30%' />
-                <Input title='Qtd Estoque' type='text' name='stock' percWidth='30%' />
-                <Input title='Avaliação' type='text' name='evaluation' percWidth='30%' />
+                <form className={styles.form} onSubmit={submitRegisterProduct}>
+                    <Input title='Nome' type='text' name='name' percWidth='100%' setField={setName} />
+                    <Input title='Descrição' type='text' name='description' percWidth='100%' setField={setDescription} />
+                    <Input title='Preço em R$' type='text' name='price' percWidth='30%' setField={setPrice} />
+                    <Input title='Qtd Estoque' type='text' name='stock' percWidth='30%' setField={setStock} />
+                    <Input title='Avaliação' type='text' name='evaluation' percWidth='30%' setField={setEvaluation} />
 
-                <Button type='submit' text="Cadastrar" minWidth="250px" marginTop="50px" />
-            </form>
-            </div>
-        </div> 
+                    <Button type='submit' text="Cadastrar" minWidth="250px" marginTop="50px" />
+                </form>
+                </div>
+            </div> 
+                {/*confirmação de cadastro*/}
+                <Modal show={show} >
+                    <Modal.Header >
+                    <Modal.Title>Confirmação de Cadastro de Produto</Modal.Title>
+                    </Modal.Header>
+                        <Modal.Body> Olá! O produto {name} foi cadastrado com sucesso </Modal.Body>
+                    <Modal.Footer>
+                    <ButtonBootstrap onClick={handleClose} >Ok</ButtonBootstrap>
+                    </Modal.Footer>
+                </Modal>
+
+                {/*casos de erro */}
+
+                <Modal show={show2} onHide={handleClose2}>
+                    <Modal.Header closeButton>
+                    <Modal.Title>Campos Inválidos</Modal.Title>
+                    </Modal.Header>
+                        <Modal.Body> {errors.map((error)=>{
+                        return (
+                            <p>{error.param} é inválido</p>
+                        )
+                        })} </Modal.Body>
+                    <Modal.Footer>
+                    <ButtonBootstrap onClick={handleClose2} >OK</ButtonBootstrap>
+                    </Modal.Footer>
+                </Modal>
         </div>
   );
 }

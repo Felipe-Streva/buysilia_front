@@ -1,3 +1,10 @@
 .logout {
     color: white;
+    cursor: pointer;
+    font-size: 26px;
+    font-weight: lighter;
+}
+
+.logout:hover{
+    text-decoration: underline;
 }

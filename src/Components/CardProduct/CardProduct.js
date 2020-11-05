@@ -5,12 +5,15 @@ import styles from "./CardProduct.module.css";
 import Button from "../Button/Button";
 
 function CardProduct(props) {
-  const [image, setImage] = useState('')
+  const [image, setImage] = useState('https://crestana.com.br/img/imagens_produto/20190726_214134_1____01%20PRODUTO-SEM-IMAGEM-1000X1000.JPG')
 
   useEffect(() => {
     (async () => {
       const img = await fetch(`http://localhost:3333/product/photos/${props.productID}`).then(data=>data.json()).then(rows=>rows[0].url_product).catch(err=>{console.log(err)})
-      setImage(img)
+      if(img){
+        setImage(img)
+      }
+      
     })()
   },[props.productID])
 

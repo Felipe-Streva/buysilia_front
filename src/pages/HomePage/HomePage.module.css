@@ -1,7 +1,8 @@
 
 .content {
   width: 960px;
-  margin: 20px auto;
+  margin: 0px auto;
+  padding: 20px 0px;
   display: flex;
   justify-content: center;
   align-items: center;

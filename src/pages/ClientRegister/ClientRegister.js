@@ -22,7 +22,7 @@ function ClientRegister() {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
   const [password2, setPassword2] = useState()
-  const [addrress, setAddress] = useState()
+  const [address, setAddress] = useState()
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -32,6 +32,10 @@ function ClientRegister() {
   const handleClose2 = () => setShow2(false);
   const handleShow2 = () => setShow2(true);
   const [errors, setErrors] = useState([])
+
+  if(session.client>0 || session.provider>0){
+    history.replace('/')
+  }
 
   const checkPassword = (password, password2) => {
     return password===password2
@@ -52,7 +56,7 @@ function ClientRegister() {
       password: password,
       cpf: cpf,
       phone: phone,
-      address: addrress
+      address: address
     }
 
     const response = await fetch('http://localhost:3333/client', { method: 'POST',
@@ -77,10 +81,6 @@ function ClientRegister() {
   const logginAndRedirect = () => {
     handleClose()
     handleLoginClient(client)
-  }
-
-  if(session.client>0 || session.provider>0){
-    history.replace('/')
   }
 
   return (
