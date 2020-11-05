@@ -25,6 +25,10 @@ function ProviderEdit() {
     history.replace('/login/provider')
   }
 
+  const prevent = (event) => {
+    event.preventDefault()
+  }
+
   return (
     <div className={styles.body}>
       <SideHeader />
@@ -35,7 +39,7 @@ function ProviderEdit() {
                   <span className={styles.span}>{data.name}</span>
               </h2>
 
-              <form className={styles.form}>
+              <form className={styles.form} onSubmit={prevent}>
                   <Input title="Nome" type="text" name="name" percWidth="100%" >{data.name}</Input>
                   <Input title="CNPJ" type="text" name="cnpj" percWidth="50%" >{data.cnpj}</Input>
                   <Input title="Telefone" type="text" name="phone" percWidth="50%" >{data.phone}</Input>

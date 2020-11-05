@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useHistory } from 'react-router-dom';
 
 import { Modal, Button as ButtonBootstrap } from 'react-bootstrap';
+import { ButtonBootstrapStyle } from '../../bootstrapStyle/ButtonBootstrap'
 
 import Input from "../../Components/Input/Input.js";
 import styles from "./ClientRegister.module.css";
@@ -130,7 +131,7 @@ function ClientRegister() {
         </Modal.Header>
             <Modal.Body> Olá {firstName}! Seu cadastro foi realizado com sucesso! </Modal.Body>
         <Modal.Footer>
-          <ButtonBootstrap onClick={logginAndRedirect} >Ok</ButtonBootstrap>
+          <ButtonBootstrap style={ButtonBootstrapStyle} onClick={logginAndRedirect} >Ok</ButtonBootstrap>
         </Modal.Footer>
       </Modal>
 
@@ -146,7 +147,7 @@ function ClientRegister() {
               )
             })} </Modal.Body>
         <Modal.Footer>
-          <ButtonBootstrap onClick={handleClose2} >OK</ButtonBootstrap>
+          <ButtonBootstrap style={ButtonBootstrapStyle} onClick={handleClose2} >OK</ButtonBootstrap>
         </Modal.Footer>
       </Modal>
     </div>

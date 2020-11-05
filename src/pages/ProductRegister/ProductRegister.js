@@ -2,6 +2,7 @@ import React, {useContext, useState} from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Modal, Button as ButtonBootstrap } from 'react-bootstrap';
+import { ButtonBootstrapStyle } from '../../bootstrapStyle/ButtonBootstrap'
 
 import Input from '../../Components/Input/Input.js'
 import styles from './ProductRegister.module.css'
@@ -58,8 +59,12 @@ function ProductRegister() {
         } else if(response.errors){
             setErrors(response.errors)
             handleShow2()
-        }
-      
+        }      
+    }
+
+    const closeAndRedirect = () => {
+        handleClose()
+        history.replace('/')
     }
 
     return (
@@ -85,11 +90,11 @@ function ProductRegister() {
                 {/*confirmação de cadastro*/}
                 <Modal show={show} >
                     <Modal.Header >
-                    <Modal.Title>Confirmação de Cadastro de Produto</Modal.Title>
+                        <Modal.Title>Confirmação de Cadastro de Produto</Modal.Title>
                     </Modal.Header>
                         <Modal.Body> Olá! O produto {name} foi cadastrado com sucesso </Modal.Body>
                     <Modal.Footer>
-                    <ButtonBootstrap onClick={handleClose} >Ok</ButtonBootstrap>
+                        <ButtonBootstrap style={ButtonBootstrapStyle} onClick={closeAndRedirect} >Ok</ButtonBootstrap>
                     </Modal.Footer>
                 </Modal>
 
@@ -97,7 +102,7 @@ function ProductRegister() {
 
                 <Modal show={show2} onHide={handleClose2}>
                     <Modal.Header closeButton>
-                    <Modal.Title>Campos Inválidos</Modal.Title>
+                        <Modal.Title>Campos Inválidos</Modal.Title>
                     </Modal.Header>
                         <Modal.Body> {errors.map((error)=>{
                         return (
@@ -105,7 +110,7 @@ function ProductRegister() {
                         )
                         })} </Modal.Body>
                     <Modal.Footer>
-                    <ButtonBootstrap onClick={handleClose2} >OK</ButtonBootstrap>
+                        <ButtonBootstrap style={ButtonBootstrapStyle} onClick={handleClose2} >OK</ButtonBootstrap>
                     </Modal.Footer>
                 </Modal>
         </div>

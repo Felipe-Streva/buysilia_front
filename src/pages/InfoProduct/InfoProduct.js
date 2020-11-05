@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext} from "react";
 import { useParams, useHistory } from 'react-router-dom'
 
 import { Modal, Button as ButtonBootstrap } from 'react-bootstrap';
+import { ButtonBootstrapStyle } from '../../bootstrapStyle/ButtonBootstrap'
 
 import styles from "./InfoProduct.module.css";
 import SideHeader from "../../Components/SideHeader/SideHeader";
@@ -14,12 +15,13 @@ function InfoProduct() {
   const { session } = useContext(Context)
   const { productID } = useParams();
   const [data, setData] = useState({});
-  const [image, setImage] = useState('')
+  const [image, setImage] = useState('https://crestana.com.br/img/imagens_produto/20190726_214134_1____01%20PRODUTO-SEM-IMAGEM-1000X1000.JPG')
   const [stock, setStock] = useState(0)
   const history = useHistory()
 
   const [confirmBought, setConfirmBought] = useState(false)
   const [showFailBought, setShowFailBought] = useState(false)
+  const [showButtons, setShowButtons] = useState(true)
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -36,7 +38,9 @@ function InfoProduct() {
   useEffect(() => {
     ( async () => {
       const data = await fetch(`http://localhost:3333/product/photos/${productID}`).then(data => data.json())
-      setImage(data[0].url_product)
+      if(data.length>0){
+        setImage(data[0].url_product)
+      }    
     })()
   },[productID])
 
@@ -49,6 +53,7 @@ function InfoProduct() {
   }
 
   const purchaseProduct = async () => {
+    setShowButtons(false)
     const body = {
       client_id: session.client,
       product_id: productID
@@ -68,10 +73,12 @@ function InfoProduct() {
       setStock(stock-1)
       setTimeout(()=>{
         setConfirmBought(false)
+        setShowButtons(true)
         handleClose()
         history.replace('/')
       },2000)
     } else {
+      setShowButtons(true)
       handleClose()
       setShowFailBought(true)
       setTimeout(()=>{
@@ -129,9 +136,12 @@ function InfoProduct() {
         </Modal.Header>
             <Modal.Body>{confirmBought ? 'Compra confirmada com sucesso' : 'Você deseja confirmar a compra?' } </Modal.Body>
         <Modal.Footer>
-          <ButtonBootstrap onClick={purchaseProduct} >Comprar</ButtonBootstrap>
+          {showButtons ? (<>
+            <ButtonBootstrap style={ButtonBootstrapStyle} onClick={purchaseProduct} >Comprar</ButtonBootstrap>
 
-          <ButtonBootstrap onClick={handleClose} >Voltar</ButtonBootstrap>
+            <ButtonBootstrap style={ButtonBootstrapStyle} onClick={handleClose} >Voltar</ButtonBootstrap>
+          </>)    :  null}
+          
 
         </Modal.Footer>
       </Modal>
