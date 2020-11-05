@@ -17,14 +17,14 @@ function ClientEdit() {
 
   useEffect(() => {
     ( async () => {
-      const data = await fetch(`http://localhost:3333/client/${session.client}`).then(data => data.json())
+      const data = await fetch(`https://secret-brushlands-49902.herokuapp.com/client/${session.client}`).then(data => data.json())
       setData(data)
     })()
   },[session.client])
 
   useEffect(() => {
     ( async () => {
-      const dataPhoto = await fetch(`http://localhost:3333/client/photos/${session.client}`).then(data => data.json())
+      const dataPhoto = await fetch(`https://secret-brushlands-49902.herokuapp.com/client/photos/${session.client}`).then(data => data.json())
       setDataPhoto(dataPhoto)
     })()
   },[session.client])

@@ -25,7 +25,7 @@ function HomePage() {
   }
 
   const createCards = async (uri) => {
-    const data = await fetch(`http://localhost:3333${uri}`).then(data=>data.json()).then(rows=>rows).catch(err=>{console.log(err)})
+    const data = await fetch(`https://secret-brushlands-49902.herokuapp.com${uri}`).then(data=>data.json()).then(rows=>rows).catch(err=>{console.log(err)})
     return data
   }
 

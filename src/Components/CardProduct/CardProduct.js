@@ -9,7 +9,7 @@ function CardProduct(props) {
 
   useEffect(() => {
     (async () => {
-      const img = await fetch(`http://localhost:3333/product/photos/${props.productID}`).then(data=>data.json()).then(rows=>rows[0].url_product).catch(err=>{console.log(err)})
+      const img = await fetch(`https://secret-brushlands-49902.herokuapp.com/product/photos/${props.productID}`).then(data=>data.json()).then(rows=>rows[0].url_product).catch(err=>{console.log(err)})
       if(img){
         setImage(img)
       }

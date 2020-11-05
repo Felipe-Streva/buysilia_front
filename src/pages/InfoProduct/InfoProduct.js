@@ -29,7 +29,7 @@ function InfoProduct() {
 
   useEffect(() => {
     ( async () => {
-      const data = await fetch(`http://localhost:3333/product/${productID}`).then(data => data.json())
+      const data = await fetch(`https://secret-brushlands-49902.herokuapp.com/product/${productID}`).then(data => data.json())
       setData(data)
       setStock(data.stock)
     })()
@@ -37,7 +37,7 @@ function InfoProduct() {
 
   useEffect(() => {
     ( async () => {
-      const data = await fetch(`http://localhost:3333/product/photos/${productID}`).then(data => data.json())
+      const data = await fetch(`https://secret-brushlands-49902.herokuapp.com/product/photos/${productID}`).then(data => data.json())
       if(data.length>0){
         setImage(data[0].url_product)
       }    
@@ -59,7 +59,7 @@ function InfoProduct() {
       product_id: productID
     }
 
-    const message = await fetch('http://localhost:3333/purchase', { method: 'POST',
+    const message = await fetch('https://secret-brushlands-49902.herokuapp.com/purchase', { method: 'POST',
                       headers: {'Accept': 'application/json','Content-Type': 'application/json'},
                       body: JSON.stringify(body), mode: 'cors', cache: 'default' })
                         .then(data => data.json())

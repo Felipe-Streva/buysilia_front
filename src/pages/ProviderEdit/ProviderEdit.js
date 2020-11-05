@@ -16,7 +16,7 @@ function ProviderEdit() {
 
   useEffect(() => {
     ( async () => {
-      const data = await fetch(`http://localhost:3333/provider/${session.provider}`).then(data => data.json())
+      const data = await fetch(`https://secret-brushlands-49902.herokuapp.com/provider/${session.provider}`).then(data => data.json())
       setData(data)
     })()
   },[session.provider])

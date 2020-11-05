@@ -60,7 +60,7 @@ function ClientRegister() {
       address: address
     }
 
-    const response = await fetch('http://localhost:3333/client', { method: 'POST',
+    const response = await fetch('https://secret-brushlands-49902.herokuapp.com/client', { method: 'POST',
                       headers: {'Accept': 'application/json','Content-Type': 'application/json'},
                       body: JSON.stringify(body), mode: 'cors', cache: 'default' })
                         .then(data => data.json())

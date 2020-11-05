@@ -20,7 +20,7 @@ function ProviderLogin() {
       cnpj: cnpj
     }
 
-    const providerID = await fetch(`http://localhost:3333/login/provider`, { method: 'POST',
+    const providerID = await fetch(`https://secret-brushlands-49902.herokuapp.com/login/provider`, { method: 'POST',
                                                       headers: {'Accept': 'application/json','Content-Type': 'application/json'},
                                                       body: JSON.stringify(body), mode: 'cors', cache: 'default' })
                                                     .then(data => data.json())
