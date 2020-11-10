@@ -36,3 +36,9 @@ O componente `<PhotoPerfil />` recebe uma props, `urlPhoto`, que recebe a url da
 ### Textarea
 
 O componente `<Textarea />` recebe uma props, `description`, que recebe uma string que será a descrição. 
+
+## Colaboradores 
+ - [Eduardo Oliveira](https://github.com/Eduardo-html)
+ - [Felipe Streva](https://github.com/Felipe-Streva)
+ - [Victoria Marques](https://github.com/vicckm)
+
